@@ -1,0 +1,26 @@
+.inc-exp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.inc-exp--container {
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+.inc-exp--container:first-of-type {
+    border-right: 2px solid #dedede;
+}
+
+.inc-exp--amount {
+    margin: 0.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.inc-exp--amount.pos {
+    color: #2ecc71;
+}
+
+.inc-exp--amount.neg {
+    color: #c0392b;
+}
