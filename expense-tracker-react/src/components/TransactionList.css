@@ -1,0 +1,11 @@
+.transaction-list {
+    margin: 0rem;
+}
+
+.transaction-list--list {
+    list-style-type: none;
+    margin-top: 1rem;
+    padding: 0;
+
+    font-size: 3rem;
+}
