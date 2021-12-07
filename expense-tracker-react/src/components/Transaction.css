@@ -1,0 +1,37 @@
+.transaction--row {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 1rem 1rem 1rem 2rem;
+    margin: 1rem 0rem;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    color: #333;
+
+    border-radius: 5px;
+}
+
+.transaction--row.pos {
+    border-right: 4px solid #2ecc71;
+}
+
+.transaction--row.neg {
+    border-right: 4px solid #c0392b;
+}
+
+.transaction--delete-btn {
+    background-color: #e74c3c;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    line-height: 2rem;
+    opacity: 0;
+    padding: 0.2rem 0.5rem;
+    transition: opacity 0.4s ease;
+}
+
+.transaction--row:hover .transaction--delete-btn {
+    opacity: 1;
+}
