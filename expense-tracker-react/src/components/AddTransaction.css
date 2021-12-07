@@ -1,0 +1,37 @@
+.add-transaction {
+    margin: 0rem;
+}
+
+.add-transaction--label {
+    display: inline-block;
+    font-size: 1.6rem;
+    margin: 1rem 0rem;
+}
+
+.add-transaction--input {
+    border: 1px solid #dedede;
+    border-radius: 5px;
+    display: block;
+    font-size: 1.6rem;
+    outline: none;
+    padding: 1rem;
+    width: 100%;
+}
+
+.add-transaction--input:focus {
+    border: 1px solid #aaaaaa;
+}
+
+.add-transaction--btn {
+    background-color: #2d179c;
+    border: 0;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    color: #fff;
+    display: block;
+    font-size: 2rem;
+    margin: 1rem 0rem 3rem;
+    padding: 1.2rem;
+    width: 100%;
+}
