@@ -1,16 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { GlobalContext } from '../context/GlobalState';
+import { Transaction } from '../context/types';
+import { addTransaction } from '../context/actions';
 import './AddTransaction.css';
 
 const AddTransaction = () => {
+    // Context
+    const { dispatch } = useContext(GlobalContext);
 
     // State
     const [text, setText] = useState<string>('');
     const [amount, setAmount] = useState<number>(0);
 
+    // Add transaction function
+    const onSubmitHandler = (e: React.FormEvent) => {
+        // Prevent page reload
+        e.preventDefault();
+
+        // Create new instance of transaction
+        const newTransaction: Transaction = {
+            id: Math.floor(Math.random() * 100000000),
+            text: text,
+            amount: amount
+        };
+
+        // Add transaction to array of transactions in global state
+        dispatch(addTransaction(newTransaction));
+    };
+
     return (
         <div className='add-transaction'>
             <h3>Add a New Transaction</h3>
-            <form>
+            <form onSubmit={onSubmitHandler}>
                 <div>
                     <label className='add-transaction--label' htmlFor='text'>Text</label>
                     <input 
