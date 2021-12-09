@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
+:root {
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -8,11 +12,62 @@
     font-size: 62.5%; /* default: 16px; 16px x 62.5% = 10px = 1rem */
 }
 
-.App {
+h1 {
+    font-size: 3.2rem;
+    letter-spacing: 0.2rem;
+}
+
+h2 {
+    font-size: 2.8rem;
+    letter-spacing: 0.1rem;
+}
+
+h3 {
+    border-bottom: 1px solid #dedede;
+    font-size: 2.4rem;
+    letter-spacing: 0.075rem;
+    padding-bottom: 1rem;
+}
+
+h4 {
+    font-size: 2rem;
+    letter-spacing: 0.05rem;
+}
+
+p, span {
+    font-size: 1.6rem;
+}
+
+.app {
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+}
+
+.app--container {
+    width: 60%;
+    margin: 3rem 0rem;
+}
+
+.app--header-container {
+    margin: 2rem 0rem;
+}
+
+.app--balance-container {
+    margin: 2rem 0rem;
+}
+
+.app--inc-exp-container {
+    margin: 2rem 0rem;
+}
+
+.app--transaction-list-container {
+    margin: 2rem 0rem;
+}
+
+.app--add-transaction-container {
+    margin: 2rem 0rem;
 }
