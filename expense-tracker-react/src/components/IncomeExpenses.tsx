@@ -1,22 +1,23 @@
 import { useContext } from 'react';
-
 import { GlobalContext } from '../context/GlobalState';
-
 import './IncomeExpenses.css';
 
 const IncomeExpenses = () => {
+    // Context
+    const { state } = useContext(GlobalContext);
 
-    const { transactions } = useContext(GlobalContext);
+    // Get transaction amounts
+    const amounts: number[] = state.transactions.map(transaction => transaction.amount);
 
-    const amounts: number[] = transactions.map(transaction => transaction.amount);
-
+    // Calculate total income
     const income: number = amounts
         .filter(item => item > 0)
-        .reduce((a, b) => (a + b));
+        .reduce((a, b) => (a + b), 0);
 
+    // Calculate total expenses
     const expense: number = amounts
         .filter(item => item < 0)
-        .reduce((a, b) => (a + b));
+        .reduce((a, b) => (a + b), 0);
 
     return (
         <div className='inc-exp'>
