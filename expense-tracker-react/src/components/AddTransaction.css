@@ -1,13 +1,20 @@
+/* Component Container */
 .add-transaction {
     margin: 0rem;
 }
 
+/* Label */
 .add-transaction--label {
     display: inline-block;
     font-size: 1.6rem;
     margin: 1rem 0rem;
 }
 
+.add-transaction--label.center {
+    text-align: center;
+}
+
+/* Input */
 .add-transaction--input {
     border: 1px solid #dedede;
     border-radius: 5px;
@@ -22,6 +29,81 @@
     border: 1px solid #aaaaaa;
 }
 
+/* Amount Container */
+.add-transaction--amount-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5%;
+}
+
+.add-transaction--amount-container div {
+    flex-grow: 3;
+}
+
+.add-transaction--amount-container div:last-child {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Switch */
+.add-transaction--switch {
+    position: relative;
+    display: inline-block;
+    width: 70px; /* 60px */
+    height: 42px; /* 34px */
+    align-self: center;
+    margin: 0rem 0rem 0rem 0rem;
+}
+
+.add-transaction--switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.add-transaction--slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #2ecc71;
+    border-radius: 0.5rem;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.add-transaction--slider:before {
+    position: absolute;
+    content: "";
+    height: 32px; /* 26px */
+    width: 32px; /* 26px */
+    left: 6px; /* 4px */
+    bottom: 4.5px; /* 4px */
+    background-color: white;
+    border-radius: 10%;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .add-transaction--slider {
+    background-color: #c0392b;
+}
+  
+input:focus + .add-transaction--slider {
+    box-shadow: 0 0 1px #c0392b;
+}
+
+input:checked + .add-transaction--slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Button */
 .add-transaction--btn {
     background-color: #2d179c;
     border: 0;
@@ -31,7 +113,7 @@
     color: #fff;
     display: block;
     font-size: 2rem;
-    margin: 1rem 0rem 3rem;
+    margin: 1.5rem 0rem 3rem;
     padding: 1.2rem;
     width: 100%;
 }
