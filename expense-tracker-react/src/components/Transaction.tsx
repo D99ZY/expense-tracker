@@ -23,7 +23,9 @@ const Transaction: React.FC<TransactionProps> = ({ id, text, amount }) => {
         <li className={amount < 0 ? 'transaction--row neg' : 'transaction--row pos'}>
             <span>{text}</span>
             <span>{sign} £{Math.abs(amount)}</span>
-            <button className='transaction--delete-btn' onClick={() => deleteHandler(id)}>X</button>
+            <div>
+                <button className='transaction--delete-btn' onClick={() => deleteHandler(id)}>X</button>
+            </div>
         </li>
     );
 };
